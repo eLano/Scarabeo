@@ -1,0 +1,38 @@
+variabile letterMie(nei suggerimenti) cosèèè:è il contatore delle lettere usate da me(dalla mano del gioc) per comporre il suggerimento
+
+Durante il Suggerimento
+si fa l'erase della lettera usata dal vettore della mano del giocatore,
+poi(solo dopo questa cosa) si richiama la stessa funzione suggRicorsivo,ma stavolta essa
+verrà chiamata col vettore mano del giocatore con una lettera in meno(la lettera eliminata perchè usata prima)
+
+
+                     
+ lettereDisp.insert(lettereDisp.begin()+i,let); //inserisco di nuovo la mia lettera
+                        Letteremie - -;
+
+
+ lo fa quando ha già una parola ben formata come suggerimento,ma deve andare avanti lo stesso),
+(deve perchè deve provare a ottenere una parola migliore come punteggio),quindi provA a cercarla con una nuova lettera(dalla mano del giocatore)
+(lettera corrente let,o un jolly oppure,scorrendo tutte le lettere possibili),ma qualcosa non va a buon fine, non si riesce a creare una parola con quella lettera,
+o si sfora dalla griglia...ecc quindi bisogna fare lettermie - -(perchè era stato fatto un ++ per qsta lettera) e reinserire la lettera (non ,alla fine,utilizzata) nel vett
+della mano del giocatore perchè non è stata effettivamente utilizzata
+
+->sotto
+
+in pratica viene fatto perchè,il suggerimento viene fatto per ogni lettera che ha in mano il giocatore,scorrendole daalla prima all ultima
+se  con una lettera(che era stata prelevata e tolta dalla mani del giocatore e fatto ++ A NumLetterMie) non si riesce a creare un suggerimento, viene rimessa nella
+mano del gioc e fatto   
+lettereDisp.insert(lettereDisp.begin()+i,let); //inserisco di nuovo la mia lettera
+                        Letteremie - -;
+
+e si incrementerà la i passando a una nuova lettera
+
+(spesso è il verifica iniziali(dell iterazione ricorsiva successiva) che dà esito negativo e fa uscire dalla funz ricorsiva attuale per tornare alla precedente
+(tornando a quando chiami ricorsivamente SuggRicorsivo) riprendendo a fare le istruz 
+	
+lettereDisp.insert(lettereDisp.begin()+i,let); //inserisco di nuovo la mia lettera
+                        Letteremie - -;
+
+
+vedere cosa fa componi parola in suggRicorsivo--->si sposta all'inizio della parola,calcola il punteggio scorrendo ogni lettera(Punteggio della parola totale) e inserisce la parola forrmata
+nella struct parolaSugg(poi,dopo,nel suggRicorsivo) si vedrà se qsta parola suggerita e' migliore della parola sugg precedente
